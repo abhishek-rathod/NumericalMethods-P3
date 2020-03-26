@@ -4,6 +4,12 @@ import math
 
 
 def f(t, v):
+    '''
+
+    :param t: time
+    :param v: velocity
+    :return: the function stated in the problem
+    '''
     g = 9.8
     k = 10**-4
     m = 10**-2
@@ -11,6 +17,13 @@ def f(t, v):
 
 
 def F(t, y):
+    '''
+
+    :param t: time
+    :param y: position
+    :return: the function stated in the problem, but written as
+    two first order DEs
+    '''
     g = 9.8
     k = 10 ** -4
     m = 10 ** -2

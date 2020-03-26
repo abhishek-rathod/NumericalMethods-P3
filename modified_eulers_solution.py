@@ -1,6 +1,8 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import math
+"""
+This moduel contains the solution using modified euler method
+it imports the functions from the methods.py module
+"""
+
 from methods import *
 
 '''using the modified eulers to solve the projectile problem
@@ -19,7 +21,7 @@ for position as a function of time'''
 x = 0.0
 xstop = 10.0
 y = np.array([0.0, 0.0])
+
 X, Y = modified_eulers(F, x, y, xstop, h)
 
-plt.plot(X, Y[:, 0])
-plt.show()
+

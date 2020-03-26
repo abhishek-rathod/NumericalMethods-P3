@@ -1,7 +1,10 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import math
+"""
+This moduel contains the solution using rk4 method
+it imports the functions from the methods.py module
+"""
+
 from methods import *
+
 '''
 Using rk4 to solve for velocity as a function of time
 '''
@@ -12,7 +15,6 @@ h = 0.1
 T, V = rungakutta4(f, t, v, tstop, h)
 
 
-
 '''
 Now using rk4 to solve for position
 y is position here and x is time
@@ -20,9 +22,8 @@ y is position here and x is time
 
 x = 0.0
 xstop = 10.0
-y = np.array([0.0, 0.0])
+y = np.array([0.0, 0.0]) #array of initial condions y_naught and yprime_naught
 X, Y = rungakutta4(F, x, y, xstop, h)
 
-plt.plot(X, Y[:, 0], label='numerical')
-plt.show()
+
 
