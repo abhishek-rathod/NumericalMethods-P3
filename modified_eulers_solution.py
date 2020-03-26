@@ -24,4 +24,20 @@ y = np.array([0.0, 0.0])
 
 X, Y = modified_eulers(F, x, y, xstop, h)
 
+plt.subplot(2, 1, 1)
+plt.plot(T, V)
+plt.title('Velocity vs Time Modified Eulers')
+plt.xlabel('Time')
+plt.ylabel('Velocity')
+plt.grid(True)
+
+plt.subplot(2, 1, 2)
+plt.plot(X, Y[:, 0])
+plt.title('Position vs Time Modified Eulers')
+plt.xlabel('Time')
+plt.ylabel('Position')
+plt.grid(True)
+
+plt.show()
+
 

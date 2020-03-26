@@ -26,4 +26,19 @@ y = np.array([0.0, 0.0]) #array of initial condions y_naught and yprime_naught
 X, Y = rungakutta4(F, x, y, xstop, h)
 
 
+plt.subplot(2, 1, 1)
+plt.plot(T, V)
+plt.title('Velocity vs Time RK4')
+plt.xlabel('Time')
+plt.ylabel('Velocity')
+plt.grid(True)
+
+plt.subplot(2, 1, 2)
+plt.plot(X, Y[:, 0])
+plt.title('Position vs Time RK4')
+plt.xlabel('Time')
+plt.ylabel('Position')
+plt.grid(True)
+
+plt.show()
 
