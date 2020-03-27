@@ -1,5 +1,5 @@
 """
-This moduel contains the solution using modified euler method
+This module contains the solution using modified euler method
 it imports the functions from the methods.py module
 """
 
@@ -11,7 +11,7 @@ for velocity as a function of time'''
 t = 0.0
 tstop = 10.0
 v = 0.0
-h = 0.1
+h = 0.05
 
 T, V = modified_eulers(f, t, v, tstop, h)
 
@@ -32,19 +32,20 @@ for time in t:
     X_analytic.append((x_analytic(time)))
 
 plt.subplot(2, 1, 1)
-plt.plot(T, V, 'o')
-plt.plot(t, V_analytic)
+plt.plot(T, V, 'o', label='Numerical')
+plt.plot(t, V_analytic, label='Analytic')
 plt.title('Velocity vs Time Modified Eulers')
 plt.xlabel('Time')
 plt.ylabel('Velocity')
 plt.grid(True)
 
 plt.subplot(2, 1, 2)
-plt.plot(X, Y[:, 0], 'o')
-plt.plot(t, X_analytic)
+plt.plot(X, Y[:, 0], 'o', label='Numerical')
+plt.plot(t, X_analytic, label='Analytic')
 plt.title('Position vs Time Modified Eulers')
 plt.xlabel('Time')
 plt.ylabel('Position')
+plt.legend()
 plt.grid(True)
 
 plt.show()

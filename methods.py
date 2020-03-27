@@ -78,7 +78,8 @@ def v_analytic(t):
     k = 10 ** -4
     g = 9.8
     c = np.sqrt(m * g / k)
-    return c*np.tanh(g *t / c)
+    return c*np.tanh(g * t / c)
+
 
 def x_analytic(t):
     m = 10 ** -2
@@ -89,3 +90,22 @@ def x_analytic(t):
     return c1*np.log(np.cosh(g * t / c))
 
 
+def test_method(t, y):
+    m = 1
+    k = 0.5
+    b = 0.2
+    F = np.zeros(2)
+    F[0] = y[1]
+    F[1] = (- k / m)*y[0] + (-b / m)*y[1]
+
+    return F
+
+
+def v_no_drag(t):
+    g = 9.8
+    return g*t
+
+
+def x_no_drag(t):
+    g = 9.8
+    return (g / 2)* t ** 2
