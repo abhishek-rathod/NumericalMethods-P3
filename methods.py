@@ -71,3 +71,21 @@ def modified_eulers(f, x, y, xstop, h):
         X.append(x)
         Y.append(y)
     return np.array(X), np.array(Y)
+
+
+def v_analytic(t):
+    m = 10 ** -2
+    k = 10 ** -4
+    g = 9.8
+    c = np.sqrt(m * g / k)
+    return c*np.tanh(g *t / c)
+
+def x_analytic(t):
+    m = 10 ** -2
+    k = 10 ** -4
+    g = 9.8
+    c1 = m/k
+    c = np.sqrt(m * g / k)
+    return c1*np.log(np.cosh(g * t / c))
+
+

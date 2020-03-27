@@ -24,15 +24,24 @@ y = np.array([0.0, 0.0])
 
 X, Y = modified_eulers(F, x, y, xstop, h)
 
+t = np.linspace(0, 10, 100)
+V_analytic = []
+X_analytic = []
+for time in t:
+    V_analytic.append(v_analytic(time))
+    X_analytic.append((x_analytic(time)))
+
 plt.subplot(2, 1, 1)
-plt.plot(T, V)
+plt.plot(T, V, 'o')
+plt.plot(t, V_analytic)
 plt.title('Velocity vs Time Modified Eulers')
 plt.xlabel('Time')
 plt.ylabel('Velocity')
 plt.grid(True)
 
 plt.subplot(2, 1, 2)
-plt.plot(X, Y[:, 0])
+plt.plot(X, Y[:, 0], 'o')
+plt.plot(t, X_analytic)
 plt.title('Position vs Time Modified Eulers')
 plt.xlabel('Time')
 plt.ylabel('Position')
